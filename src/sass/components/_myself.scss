@@ -1,0 +1,251 @@
+.wrapper-header {
+  display: flex;
+  align-items: center;
+  .text {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .zm-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background-color: $purple-primary;
+    margin-left: 14px;
+    .icon {
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+}
+
+.wrapper-content {
+  margin-top: calc($header-height - 30px);
+  .content-title {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: $text-primary;
+    font-weight: 700;
+    text-transform: capitalize;
+    button {
+      background: rgba(0, 0, 0, 0.07);
+      margin-left: 8px;
+      width: 26px;
+      .icon {
+        font-size: 16px;
+        padding: 5px;
+        border-radius: 50%;
+      }
+    }
+    & > a {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      color: #696969;
+      .icon {
+        font-size: 16px;
+        top: 0;
+        margin-left: 6px;
+        position: relative;
+        color: inherit;
+      }
+    }
+  }
+
+  .content-playlist {
+    display: flex;
+    .zm-card-img {
+      &:hover .card-hover {
+        display: block;
+      }
+    }
+    .item-playlist__img {
+      width: 224px;
+      padding-bottom: 100%;
+    }
+  }
+}
+
+.wrapper-bottom {
+  .zm-navbar {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.07);
+    }
+    &__menu {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .zm-navbar__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      position: relative;
+      color: $text-primary;
+      margin: 0 40px 0 0;
+      line-height: normal;
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        transition: width 0.4s;
+        background: $purple-primary;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      .navbar-link a {
+        display: block;
+        padding: 15px 0;
+      }
+      .active::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: $purple-primary;
+      }
+    }
+  }
+  .zm-library-songs {
+    margin-left: -10px;
+    .select-header {
+      align-items: center;
+      display: flex;
+      text-align: left;
+      margin: 0 25px;
+      padding: 10px;
+      height: 46px;
+      &-left {
+        width: 50%;
+        margin-right: 10px;
+      }
+      &-middle {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+        text-align: left;
+        align-self: center;
+        width: 0;
+      }
+      &-right {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-left: 10px;
+      }
+    }
+    .list-select-songs {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .item-song {
+        flex-grow: 1;
+        border-bottom: 1px solid $alpha-bg;
+        &:last-child {
+          border: none;
+        }
+        &:hover {
+          background-color: $alpha-bg;
+        }
+        &:hover .icon-hover {
+          display: block;
+        }
+        &:hover .opacity {
+          visibility: visible;
+        }
+      }
+      .media-left {
+        .song-prefix {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          margin-right: 10px;
+          color: rgba(50, 50, 61, 0.5);
+          font-weight: 700;
+          .icon {
+            zoom: 0.1;
+            fill: rgba(0, 0, 0, 0.5);
+          }
+        }
+        .song-thumb {
+          margin-right: 10px;
+          flex-shrink: 0;
+          display: block;
+          position: relative;
+          overflow: hidden;
+          border-radius: 4px;
+          cursor: pointer;
+          .image {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        .card-info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          .song-title-item {
+            display: flex;
+            white-space: nowrap;
+            line-height: 0;
+            padding-right: 10px;
+            color: #525252;
+            .title {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 1.36;
+              text-overflow: clip;
+              overflow: visible;
+              display: flex;
+              align-items: center;
+            }
+          }
+          & > .subtitle {
+            display: inline-block;
+            color: #696969;
+            font-size: 12px;
+            margin-top: 3px;
+          }
+        }
+      }
+      .media-content > span {
+        font-size: 14px;
+        white-space: nowrap;
+        max-width: 100%;
+        color: rgba(50, 50, 61, 0.5);
+      }
+    }
+  }
+}
+.item-song:hover .opacity {
+  visibility: visible;
+}

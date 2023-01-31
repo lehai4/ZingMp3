@@ -1,0 +1,22 @@
+.wrapper-explore {
+  padding-top: 20px !important;
+}
+.track-vertical {
+  position: absolute;
+  width: 4px;
+  transition: opacity 200ms ease 0s;
+  opacity: 0;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  z-index: 100;
+  .thumb-vertical {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 108px;
+    transform: translateY(0px);
+    background-color: $bg-color;
+    border-radius: 2px;
+  }
+}

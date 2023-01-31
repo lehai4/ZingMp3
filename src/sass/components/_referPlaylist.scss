@@ -1,0 +1,27 @@
+.item-playlist {
+  padding-left: 12px;
+  padding-right: 12px;
+  &:first-child {
+    padding-left: 0;
+  }
+  .content {
+    width: 224px;
+    .title {
+      font-size: 15px;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+    .subtitle {
+      opacity: 0.9;
+      font-size: 12px;
+    }
+    .title,
+    .subtitle {
+      margin: 6px 0;
+    }
+  }
+}

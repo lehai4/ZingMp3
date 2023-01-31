@@ -1,0 +1,119 @@
+.zm-header.is-sticky {
+  background-color: $layout-bg;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 5px $sticky-header-box-shadow;
+}
+.header {
+  position: fixed;
+  align-items: center;
+  display: flex;
+  inset: 0;
+  left: $navbar-width;
+  height: $header-height;
+  z-index: 999;
+  min-width: 660px;
+  padding: 0 $padding-section;
+
+  @include header {
+    right: $player-queue-width;
+  }
+  &__main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-grow: 1;
+      margin-right: 10px;
+      width: 100%;
+      .zm-btn {
+        display: flex;
+        align-items: center;
+        position: none !important;
+      }
+      i {
+        font-size: 24px;
+        margin-right: 20px;
+      }
+      &__search {
+        position: relative;
+        border-radius: 20px;
+        height: 40px;
+        width: 100%;
+        max-width: 540px;
+        background-color: $alpha-bg;
+        i {
+          position: absolute;
+          cursor: pointer;
+          font-size: 22px;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 10px;
+          color: $txt-placeholder;
+        }
+        &__input {
+          position: absolute;
+          top: 0;
+          left: 38px;
+          right: 10px;
+          bottom: 0;
+          input[type="text"] {
+            margin: 0;
+            display: inline-block;
+            width: 95%;
+            font-size: 14px;
+            color: $search-txt;
+            background-clip: padding-box;
+            border: 0;
+            position: relative;
+            height: 100%;
+            line-height: 34px;
+          }
+        }
+      }
+    }
+    &__right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .setting-item {
+        position: relative;
+        margin-right: 10px;
+        i {
+          font-size: 20px;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $alpha-bg;
+          border-radius: 999px;
+          padding: 5px;
+          border-radius: 50%;
+        }
+      }
+      .login-container {
+        display: flex;
+        position: relative;
+        & > zm-btn {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+        }
+        &__img {
+          overflow: hidden;
+          border-radius: 999px !important;
+          width: 40px;
+          height: 40px;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

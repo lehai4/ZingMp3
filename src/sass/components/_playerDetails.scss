@@ -1,0 +1,101 @@
+.player-queue__list {
+  $max-width-set: 150px;
+  position: relative;
+  padding: 0 3px 15px 8px;
+  .active {
+    background-color: $text-item-hover !important;
+    color: white !important;
+    font-weight: 700;
+  }
+  &__item {
+    border-radius: 4px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    &:hover .opacity {
+      visibility: visible;
+    }
+    &:hover &__content__right,
+    &:hover .icon-hover {
+      display: block;
+    }
+
+    &:hover .card-info__title,
+    &:hover .card-info__singer {
+      max-width: $max-width-set;
+    }
+    &__content {
+      padding: 8px;
+      align-items: center;
+      display: flex;
+      text-align: left;
+      &__left {
+        display: flex;
+        flex-grow: 1;
+        .song-thumb {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+          border-radius: 4px;
+          flex-shrink: 0;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .card-info {
+          max-width: 200px;
+          color: #525252;
+          &__title {
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            color: inherit;
+            font-weight: 405;
+            line-height: 1.3;
+            span {
+              white-space: nowrap;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-size: 15px;
+            }
+          }
+          &__singer {
+            line-height: 1.33;
+            font-size: 12px;
+            color: #696969;
+            margin-top: 3px;
+            white-space: nowrap;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            .icon {
+              font-size: 10px;
+              margin-left: 2px;
+              display: inline;
+            }
+          }
+        }
+      }
+      &__right {
+        margin-left: 10px;
+        display: none;
+        .zm-btn {
+          padding: 0;
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+}
+.active .player-queue__list__item__content__right .icon {
+  color: $txt-white;
+}
+.active .card-info__title {
+  color: $txt-white !important;
+}
+.active .card-info__singer {
+  color: hsla(0, 0%, 100%, 0.6);
+}

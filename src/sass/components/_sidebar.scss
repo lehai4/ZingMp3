@@ -1,0 +1,98 @@
+// sideBar
+.zm-sidebar {
+  height: calc(100vh - 90px);
+  position: relative;
+  z-index: 100;
+  width: $sidebar-width;
+  background-color: $sidebar-bg;
+  padding-top: 70px;
+  padding-bottom: 54px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .zm__navbar {
+      width: 100%;
+      &__brand {
+        width: 240px;
+        height: 70px;
+        position: fixed;
+        top: 0;
+        padding: 0 25px 0 28px;
+        display: flex;
+        align-items: center;
+        button {
+          display: inline-block;
+          line-height: 0;
+          border-radius: 0;
+        }
+        .zmp3-logo {
+          width: 120px;
+          height: 40px;
+          display: inline-block;
+          background: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-light.svg)
+            50% / contain no-repeat;
+        }
+      }
+      &__main {
+        position: relative;
+        margin-bottom: 15px;
+        margin-top: 5px !important;
+        &__menu__item {
+          font-weight: 700;
+          color: $text-primary;
+          border-left: 3px solid transparent;
+          &--active {
+            color: #ea7aa0;
+            background-color: rgba(0, 0, 0, 0.09);
+            border-left: 3px solid #ea7aa0;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 7px 25px;
+          }
+          .icon {
+            width: 24px;
+            height: 24px;
+            font-size: 24px;
+            margin-right: 10px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            line-height: inherit;
+          }
+          span {
+            white-space: nowrap;
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Add playlist
+.add-playlist-sidebar .zm-btn {
+  position: fixed;
+  width: 240px;
+  left: 0;
+  height: 54px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 28px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  color: $text-primary;
+  font-weight: 700;
+  bottom: 0;
+  .icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: $text-primary;
+  }
+}
+.add-playlist-sidebar .zm-btn {
+  bottom: 90px;
+}

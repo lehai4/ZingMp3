@@ -1,0 +1,225 @@
+// variable support
+$header-height: 70px;
+$player-height: 90px;
+$padding-section: 59px;
+//refer chung
+.zm-btn {
+  font-size: 14px;
+  border-radius: 999px;
+  line-height: normal;
+  border: 0;
+  display: inline-block;
+  font-weight: 400;
+  text-transform: none;
+  text-align: center;
+  cursor: pointer;
+}
+.icon {
+  line-height: 66%;
+  opacity: 0.8;
+  display: inline-block;
+}
+.line {
+  position: relative;
+  width: 100%;
+}
+.line:after {
+  content: "";
+  border-top: 1px solid;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  opacity: 0.1;
+}
+.zm-card {
+  max-width: 100%;
+  position: relative;
+}
+.zm-card-img {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.scroll {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.scroll-bar {
+  position: absolute;
+  inset: 0;
+  overflow: hidden scroll;
+  margin: 10px 1px 0 0;
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    display: block;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+}
+.scroll-refer {
+  margin-top: 70px !important;
+}
+
+.opacity {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+.icon-hover {
+  position: absolute;
+  color: white;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.media {
+  align-items: center;
+  display: flex;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+}
+.media-left {
+  display: flex;
+  width: 50%;
+  margin-right: 10px;
+}
+.media-content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+  align-self: center;
+  width: 0;
+}
+.media-right {
+  margin-left: 10px;
+}
+.media-left,
+.media-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.level-left {
+  align-items: center;
+  justify-content: flex-start;
+}
+.level .level-left,
+.level .level-right {
+  display: flex;
+}
+.level .level-item:not(.is-narrow) {
+  flex-grow: 1;
+}
+.level .level-item:not(:last-child) {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+.level-item {
+  align-items: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.level .level-left + .level-right {
+  margin-top: 0;
+}
+.level-right {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+//card hover
+.card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  animation: blur linear 0.3s;
+  &__content {
+    color: #fff;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .hover_lr > .level > .level-item:first-child {
+    color: #ea7aa0;
+  }
+  .hover__between {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      left: 40%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .fill {
+    font-size: 20px;
+  }
+}
+//btn refer
+
+.general-select {
+  margin-bottom: 20px;
+  .zm-btn {
+    padding: 4px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: 15px;
+  }
+  .zm-btn.active {
+    border-color: #ea7aa0;
+    background-color: #ea7aa0;
+    color: #fff;
+  }
+}
+//main
+.zm-main {
+  min-height: 100vh;
+  margin-top: 70px;
+  padding: 0 $padding-section;
+}
+.wrapper {
+  min-height: calc(100% - $header-height - $player-height);
+  padding-top: 70px;
+  position: relative;
+}
+.bxs-heart {
+  color: #ea7aa0;
+}
